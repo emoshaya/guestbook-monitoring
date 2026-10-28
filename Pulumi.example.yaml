@@ -1,0 +1,8 @@
+# example settings; use the pulumi config commands in the readme
+config:
+  guestbook-monitoring:kubernetesContext: minikube
+  guestbook-monitoring:serviceType: NodePort
+  guestbook-monitoring:frontendReplicas: 3
+  guestbook-monitoring:redisReplicas: 2
+# the admin password is generated and exported as a Pulumi secret
+# to supply your own: pulumi config set --secret grafanaAdminPassword

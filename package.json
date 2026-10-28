@@ -1,0 +1,24 @@
+{
+  "name": "guestbook-monitoring",
+  "version": "1.0.0",
+  "private": true,
+  "description": "guestbook monitoring with pulumi, prometheus and grafana",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@pulumi/kubernetes": "4.34.2",
+    "@pulumi/pulumi": "3.272.0",
+    "@pulumi/random": "4.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

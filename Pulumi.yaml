@@ -1,0 +1,6 @@
+name: guestbook-monitoring
+runtime:
+  name: nodejs
+  options:
+    typescript: true
+description: guestbook monitoring with pulumi, prometheus and grafana

@@ -1,0 +1,6 @@
+node_modules/
+Pulumi.*.yaml
+!Pulumi.example.yaml
+.pulumi/
+*.log
+.DS_Store
