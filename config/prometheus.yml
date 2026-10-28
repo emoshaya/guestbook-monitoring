@@ -11,14 +11,14 @@ scrape_configs:
         namespaces:
           names: [__NAMESPACE__]
     relabel_configs:
-      # These annotations are consumed explicitly here; they are not magic.
+      # discover services with prometheus.io/scrape enabled
       - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
         action: keep
         regex: "true"
       - source_labels: [__meta_kubernetes_service_label_app_kubernetes_io_part_of]
         action: keep
         regex: guestbook
-      # Filter extra pod ports so Redis/PHP/NGINX ports are never scraped as metrics.
+      # scrape the metrics port, excluding the application ports
       - source_labels: [__meta_kubernetes_endpointslice_port_name]
         action: keep
         regex: metrics
